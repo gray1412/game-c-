@@ -1,0 +1,10 @@
+﻿  main.cpp
+c:\users\tuanduong pc\source\repos\infinityspacewar\enemy.h(16): warning C4005: 'ANIMATION_WIDTH': macro redefinition
+  c:\users\tuanduong pc\source\repos\infinityspacewar\explosion.h(7): note: see previous definition of 'ANIMATION_WIDTH'
+c:\users\tuanduong pc\source\repos\infinityspacewar\enemy.h(17): warning C4005: 'ANIMATION_HEIGHT': macro redefinition
+  c:\users\tuanduong pc\source\repos\infinityspacewar\explosion.h(8): note: see previous definition of 'ANIMATION_HEIGHT'
+c:\users\tuanduong pc\source\repos\infinityspacewar\bossenemy.h(9): warning C4005: 'ANIMATION_WIDTH': macro redefinition
+  c:\users\tuanduong pc\source\repos\infinityspacewar\enemy.h(16): note: see previous definition of 'ANIMATION_WIDTH'
+c:\users\tuanduong pc\source\repos\infinityspacewar\bossenemy.h(10): warning C4005: 'ANIMATION_HEIGHT': macro redefinition
+  c:\users\tuanduong pc\source\repos\infinityspacewar\enemy.h(17): note: see previous definition of 'ANIMATION_HEIGHT'
+  InfinitySpaceWar.vcxproj -> C:\Users\tuanduong pc\source\repos\InfinitySpaceWar\Debug\InfinitySpaceWar.exe
