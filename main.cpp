@@ -1,6 +1,7 @@
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include "Menu.h"
 #include "TheEnd.h"
@@ -28,6 +29,11 @@ int main()
 	textureBackground.loadFromFile("images/Background.png");
 	spriteBackground.setTexture(textureBackground);
 
+	sf::Sound soundBackGround;
+	sf::SoundBuffer soundBufferBackGround;
+	soundBufferBackGround.loadFromFile("sound/BGmusicc.wav");
+	soundBackGround.setBuffer(soundBufferBackGround);
+
 	Player player;
 	BulletSystem bullets;
 	EnemySystem enemies(bullets.getList(), bullets.getBulletNumber(), &app);
@@ -41,14 +47,20 @@ int main()
 		while (app.pollEvent(e))
 		{
 			if (e.type == sf::Event::Closed)
+			{
+				soundBackGround.stop();
 				app.close();
+			}
 		}
 
 		app.clear();
+
 		if (menu.isCombackMenu == true)
 		{
 			menu.drawMenu(app);
 			menu.updateMenu(app);
+			soundBackGround.play();
+			soundBackGround.setLoop(true);
 		}
 
 		if (menu.isPlay == true)
@@ -107,6 +119,7 @@ int main()
 				menu.isChangeWindow = false;
 			}
 			key = isKeyPressed();
+			soundBackGround.stop();
 		}
 
 		if (theEnd.isLoss == true)
@@ -119,6 +132,7 @@ int main()
 				menu.isChangeWindow = false;
 			}
 			key = isKeyPressed();
+			soundBackGround.stop();
 		}
 
 		/*Introduction*/
@@ -138,7 +152,12 @@ int main()
 		}
 
 		/*Quit*/
-		if (menu.isQuit == true) app.close();
+		if (menu.isQuit == true)
+		{
+			soundBackGround.stop();
+			app.close();
+		}
+			
 
 		app.display();
 	}
